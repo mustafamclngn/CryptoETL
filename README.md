@@ -2,7 +2,7 @@
 
 An automated ETL (Extract, Transform, Load) pipeline that fetches real-time cryptocurrency prices from the CoinGecko API, transforms and cleans the data, and loads it into a PostgreSQL database every 10 minutes — with a live Streamlit dashboard for visualization.
 
-## Tech Stack
+## TECH STACK
 | Layer | Tool |
 |---|---|
 | Extract | CoinGecko API, `requests` |
