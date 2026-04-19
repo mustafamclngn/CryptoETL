@@ -4,8 +4,8 @@ from sqlalchemy import text
 from db.models import get_engine
 
 st.set_page_config(page_title="Crypto Dashboard", layout="wide")
-st.title("Crypto Price")
-st.caption("Data is being extracted every 5  minutes")
+st.title("CryptoETL")
+st.caption("Data is being extracted every 10 minutes")
 
 engine = get_engine()
 
@@ -77,6 +77,3 @@ st.caption("Which coins gained or lost the most in the last 24 hours.")
 
 change_df = df[["name", "price_change_24h"]].sort_values("price_change_24h", ascending=False)
 st.bar_chart(change_df.set_index("name")["price_change_24h"], use_container_width=True)
-
-total_rows = engine.connect().execute(text("SELECT COUNT(*) FROM crypto_prices")).scalar()
-st.caption(f"📦 Total records in database: {total_rows:,} | Last updated: {df['fetched_at'].max()}")
