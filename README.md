@@ -1,15 +1,18 @@
-# Crypto ETL Pipeline
+<div align="center">
 
-A Python-based ETL pipeline that extracts cryptocurrency market data from the CoinGecko API every 5 minutes, transforms it using pandas, loads it into PostgreSQL via SQLAlchemy, and serves a live Streamlit dashboard for price monitoring and trend analysis.
+# CryptoETL
+### Crypto ETL Pipeline
 
-## TECH STACK
-| Layer | Tool |
-|---|---|
-| Extract | CoinGecko API, `requests` |
-| Transform | `pandas` |
-| Load | `PostgreSQL`, `SQLAlchemy` |
-| Scheduling | `APScheduler` |
-| Dashboard | `Streamlit` |
+![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-Data%20Transform-150458?logo=pandas&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?logo=sqlalchemy&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
+
+**A Python-based ETL pipeline that extracts cryptocurrency market data from the CoinGecko API, transforms it using pandas, loads it into PostgreSQL, and serves a live Streamlit dashboard for price monitoring and trend analysis.**
+
+</div>
 
 ## SETUP & INSTALLATION
 
