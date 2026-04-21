@@ -18,6 +18,7 @@ class CryptoPrice(Base):
     total_volume     = Column(Float)
     price_change_24h = Column(Float)
     fetched_at       = Column(DateTime, nullable=False)
+    image_url        = Column(String)
 
 def get_engine():
     return create_engine(os.getenv("DATABASE_URL"))
