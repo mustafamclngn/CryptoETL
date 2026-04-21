@@ -70,14 +70,13 @@ Then open your browser at `http://localhost:8501`
 > **Tip:** Run the scheduler and dashboard at the same time in two separate
 > terminals to see live data updates on the dashboard.
 
----
 <div align="center">
   
 ## DASHBOARD
 ![Dashboard](screenshots/dashboard.png)
 
 </div>
----
+
 
 ## DASHBOARD FEATURES
 - **Top coins** — metric cards showing current price and 24h change
