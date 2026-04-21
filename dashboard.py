@@ -5,7 +5,7 @@ from db.models import get_engine
 
 st.set_page_config(page_title="Crypto Dashboard", layout="wide")
 st.title("CryptoETL")
-st.caption("Data is being extracted every 10 minutes")
+st.caption("An automated cryptocurrency pipeline that extracts data from CoinGecko API")
 
 engine = get_engine()
 
@@ -41,6 +41,18 @@ df = get_latest_prices()
 st.subheader("Top Coins")
 st.caption("24-hour change for each of the coins are shown")
 
+# ── manual css for borders ────────────────────────────────────────────────
+st.markdown("""
+    <style>
+    [data-testid="stMetric"] {
+        border: 1px solid rgba(128, 128, 128, 0.3);
+        border-radius: 10px;
+        padding: 16px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+# ──────────────────────────────────────────────────────────────────────────
+
 cols = st.columns(5)
 for i, row in df.head(5).iterrows():
     delta = f"{row['price_change_24h']:+.2f}%"
@@ -50,12 +62,10 @@ for i, row in df.head(5).iterrows():
         delta=delta
     )
 
-st.divider()
-
 # ── price table ────────────────────────────────────────────
 
 st.subheader("Price Table")
-st.caption("Latest recorded price for all tracked coins.")
+st.caption("Recorded price for each coin is extracted every 10 minutes")
 
 table = df[["name", "symbol", "current_price", "price_change_24h", "market_cap", "fetched_at"]].copy()
 table.columns = ["Coin", "Symbol", "Price (USD)", "24h Change %", "Market Cap", "Last Updated"]
@@ -67,13 +77,3 @@ table["24h Change %"] = table["24h Change %"].apply(
 )
 table = table.reset_index(drop=True)
 st.dataframe(table, use_container_width=True, hide_index=True)
-
-st.divider()
-
-# ── 24 hours price change ───────────────────────────────────────
-
-st.subheader("24 hour Price Change")
-st.caption("Which coins gained or lost the most in the last 24 hours.")
-
-change_df = df[["name", "price_change_24h"]].sort_values("price_change_24h", ascending=False)
-st.bar_chart(change_df.set_index("name")["price_change_24h"], use_container_width=True)
