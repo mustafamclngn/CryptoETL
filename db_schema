@@ -1,0 +1,12 @@
+CREATE TABLE crypto_prices (
+    id                BIGSERIAL       PRIMARY KEY,
+    coin_id           VARCHAR         NOT NULL,
+    symbol            VARCHAR,
+    name              VARCHAR,
+    current_price     FLOAT,
+    market_cap        FLOAT,
+    total_volume      FLOAT,
+    price_change_24h  FLOAT,
+    fetched_at        TIMESTAMP       NOT NULL,
+    image_url         VARCHAR
+);
