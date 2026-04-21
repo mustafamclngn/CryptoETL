@@ -71,11 +71,17 @@ Then open your browser at `http://localhost:8501`
 > terminals to see live data updates on the dashboard.
 
 ---
+<div align="center">
+  
+## DASHBOARD
+![Dashboard](screenshots/dashboard.png)
+
+</div>
+---
 
 ## DASHBOARD FEATURES
 - **Top coins** — metric cards showing current price and 24h change
 - **Price Table** — latest prices for all 10 tracked coins with color-coded 24h change
-- **24h Price Change Chart** — bar chart showing which coins gained or lost the most
 
 ---
 
